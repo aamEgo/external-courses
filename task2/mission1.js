@@ -1,16 +1,7 @@
 function checkNumberOrString(val){
-    var result = '';
     var typeOfVal = typeof val;
-    switch (typeOfVal){
-        case 'number':
-        case 'string':
-            result = typeOfVal;
-            break;
-        default:
-            result = undefined;
-            break;
-    }
-    return result;
+    if (typeOfVal == 'string' || typeOfVal == 'number')
+        return typeOfVal;
 }
 
 function test(){

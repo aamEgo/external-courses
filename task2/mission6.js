@@ -4,7 +4,7 @@ function checkSimpleValue(value) {
     if (value > MAX_VALUE){
         console.info('Введите число меньше ' +MAX_VALUE);
     }
-    var resultMessage = 'Число '+value+(isSimpleValue(value) == true ? ' - простое число' : ' - составное число');
+    var resultMessage = 'Число '+value+(isSimpleValue(value) ? ' - простое число' : ' - составное число');
     console.info(resultMessage);
 }
 

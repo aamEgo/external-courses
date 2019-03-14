@@ -3,21 +3,22 @@ function isEvenValue(val){
 }
 
 function countValues(arr){
-    var result = [0,0,0];
+    var zeroNum = 0;
+    var oddNum = 0;
+    var evenNum = 0;
     for (var val of arr){
         if (val == 0) {
-            result[2]++;
+            ++zeroNum;
             continue;
         }
-        var indexOfResult = isEvenValue(val) == true ? 0 : 1;
-        result[indexOfResult]++;
+        isEvenValue(val) ? ++evenNum : ++oddNum;
     }
-    return result;
+    return [evenNum,oddNum,zeroNum];
 }
 
 function test(){
     console.info(countValues([1,2,3,4]));
-    console.info(countValues([1,2,3,0]));
+    console.info(countValues([1,2,3,0,5,6,7]));
 }
 
 test();
