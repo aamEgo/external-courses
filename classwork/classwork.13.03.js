@@ -25,6 +25,7 @@ function main(){
         if (userObject.name == 'Mary'){
             userObject.husband = favoriteUser;
             delete userObject.age;
+            return;
         }
     });
     //test
