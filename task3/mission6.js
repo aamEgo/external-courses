@@ -2,7 +2,7 @@ function deepCloneObject(object) {
     var newObject = {};
     for (var key in object) {
         var value = object[key];
-        typeof value == 'object' ? newObject[key] = deepCloneObject(value) : newObject[key] = value;
+        newObject[key] = typeof value == 'object' ? deepCloneObject(value) : value;
     }
     return newObject;
 }
