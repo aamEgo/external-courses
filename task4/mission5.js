@@ -1,10 +1,10 @@
-String.prototype.isExistSubstring = function (substr) {
-    return this.indexOf(substr) == -1 ? false : true;
+function isExistSubstring(str,substr) {
+    return str.indexOf(substr) == -1 ? false : true;
 }
 
 function test() {
-    console.info('xers'.isExistSubstring('x'));
-    console.info('xers'.isExistSubstring('w'));
+    console.info(isExistSubstring('avadakedavra','ked'));
+    console.info(isExistSubstring('xers','ww'));
 }
 
 test();
