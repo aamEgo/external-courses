@@ -50,7 +50,6 @@ var calculator = {
 function test() {
     calculator.add(0)(3)(4)(10);//17
     console.info(calculator.getResult());
-    calculator.reset();
     calculator.subtract(3);//14
     console.info(calculator.getResult());
     calculator.divide(7)(1);//2
