@@ -15,13 +15,13 @@ function Calculator() {
 
     function divide(val) {
         val = typeof val == 'number' ? val : 0;
-        result += val;
+        result /= val;
         return divide;
     }
 
     function multiply(val) {
         val = typeof val == 'number' ? val : 0;
-        result += val;
+        result *= val;
         return multiply;
     }
 
