@@ -51,9 +51,9 @@ function test() {
     console.info(calculator.getResult());
     calculator.subtract(3);//14
     console.info(calculator.getResult());
-    calculator.divide(7)(1);//22
+    calculator.divide(7)(1);//2
     console.info(calculator.getResult());
-    calculator.multiply(6)(14);
+    calculator.multiply(6)(14);//168
     console.info(calculator.getResult());
 }
 
