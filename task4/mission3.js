@@ -1,16 +1,15 @@
 function trim(str) {
-    var str = str.split('');
     if (str[0] == ' ') {
-        str.splice(0, 1);
+        str = str.slice(1);
     }
     if (str[str.length - 1] == ' ') {
-        str.splice([str.length - 1], 1);
+        str = str.slice(0,-1);
     }
-    return str.join('');
+    return str;
 }
 
 function test() {
-    console.info(trim(' ss '));
+    console.info(trim(' ssd '));
 }
 
 test();

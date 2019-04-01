@@ -5,13 +5,12 @@ function upperWord(wordStr) {
 }
 
 function toLowerCamelCase(str) {
-    var result = '';
-    str.split(' ').forEach((word,index)=>{
+    var result = str.split(' ').map((word, index) => {
         if (index == 0)
-            result+= word;
-        result+=upperWord(word);
+            return word;
+        return upperWord(word);
     });
-    return result;
+    return result.join('');
 }
 
 function test() {

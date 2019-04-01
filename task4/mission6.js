@@ -5,11 +5,10 @@ function upperWord(wordStr) {
 }
 
 function upperString(str) {
-    var result = '';
-    str.split(' ').forEach(word=>{
-        result += upperWord(word)+' ';
-    })
-    return result;
+    var result = str.split(' ').map(word=>{
+        return upperWord(word);
+    });
+    return result.join('');
 }
 
 function test(){
