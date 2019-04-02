@@ -4,7 +4,7 @@ function reduce(array, cb, initialValue) {
     for (var i = startIndex; i < array.length; ++i) {
         previousValue = cb(previousValue, array[i], i, array);
     }
-    return initialValue;
+    return previousValue;
 }
 
 function test() {
