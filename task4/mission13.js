@@ -1,5 +1,5 @@
 function randValue() {
-    var rand =  (Math.random() * 100);
+    var rand = Math.floor(Math.random() * 100 + 1);
     return rand;
 }
 
