@@ -1,0 +1,18 @@
+.common_text {
+    margin: 20px;
+    padding-left: 10px;
+    border-left: 2px solid #c1c367;
+    font-size: 24px;
+    word-spacing: 22px;
+    background-color: #e0e0e0;
+}
+
+.notice_text {
+    margin: 4%;
+    border: 8px double orangered;
+
+    font-size: 1.3em;
+    font-family: "Lobster";
+    text-transform: uppercase;
+    text-align: center;
+}

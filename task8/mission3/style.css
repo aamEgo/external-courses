@@ -1,0 +1,29 @@
+div {
+    text-align: center;
+}
+
+.variation_1 {
+    box-shadow: 0px 0px 0px 2px purple;
+}
+
+.variation_2 {
+    border-style: inset;
+}
+
+.variation_3 {
+    outline-style: ridge;
+    outline-color: green;
+}
+
+.variation_4 {
+    background-color: red;
+    padding: 1px;
+}
+
+.variation_4 .text{
+    background: white;
+}
+
+.variation_5{
+    border: 1px double;
+}

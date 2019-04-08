@@ -1,0 +1,30 @@
+html {
+    background-image: url("../img/background.jpg");
+}
+
+#content {
+    display: flex;
+    margin: 10px;
+}
+
+#mainContent {
+    width: 80%;
+    border: 2px solid rgba(96, 86, 25, 0.5);
+}
+
+#menuBlock {
+    width: 20%;
+    border: 1px solid rgba(96, 56, 26, 0.5);
+}
+
+.btnMenu {
+    margin: 30px;
+    padding: 5px;
+    border-style: inset;
+    border-color: coral;
+    border-width: 7px;
+    text-align: center;
+    text-transform: uppercase;
+    background-color: #a19736;
+
+}
