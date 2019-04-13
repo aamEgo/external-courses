@@ -1,0 +1,19 @@
+.stars_button{
+
+}
+
+.stars_button span {
+    font: 1.2em sans-serif;
+    text-shadow: 0 0 2px #505050;
+    text-transform: uppercase;
+}
+
+.stars_button span:after {
+    content: '★';
+    text-shadow: initial;
+}
+
+.stars_button span:before {
+    content: '★';
+    text-shadow: initial;
+}
