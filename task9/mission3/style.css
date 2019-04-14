@@ -8,12 +8,7 @@
     text-transform: uppercase;
 }
 
-.stars_button span:after {
-    content: '★';
-    text-shadow: initial;
-}
-
-.stars_button span:before {
+.stars_button span:after,.stars_button span:before {
     content: '★';
     text-shadow: initial;
 }

@@ -1,0 +1,48 @@
+/*
+color1:#60b88d;
+color2:#90cdaf
+color3:#bfe3d1
+ */
+
+.variation1 {
+
+}
+
+.variation1-1 {
+
+}
+
+.variation1-1-1 {
+
+}
+
+.variation2 {
+    width: 20%;
+    background: #60B88D;
+    height: 200px;
+    position: relative;
+}
+
+.variation2::after, .variation2::before {
+    content: "";
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    z-index: -1;
+}
+
+.variation2::before {
+    top: 10px;
+    left: 10px;
+    background: #bfe3d1;
+}
+
+.variation2::after {
+    top: 5px;
+    left: 5px;
+    background: #90cdaf;
+}
+
+.variation3 {
+
+}
