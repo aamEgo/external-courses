@@ -1,0 +1,156 @@
+.top {
+    width: 100%;
+    height: 217px;
+}
+
+.logo {
+    width: 403px;
+    height: 93px;
+    background-image: url("img/logo@1X.png");
+
+    margin-top: 61px;
+    margin-left: 403px;
+}
+
+.header_icons {
+}
+
+.menu_block {
+    border-top: solid 1px #eceef4;
+    border-bottom: solid 1px #eceef4;
+    height: 86px;
+
+}
+
+.menu_block .homeBtn {
+    color: rgba(31, 170, 226, 255);
+}
+
+.menu_block ul {
+    padding-left: 0;
+    margin: 0px 0px 0px 403px;
+    list-style-type: none;
+}
+
+.menu_block ul li {
+    font-family: ﻿OpenSans-Bold;
+    font-size: 13pt;
+    color: rgba(109, 110, 113, 255);
+    text-align: left;
+    font-weight: bold;
+    padding: 34px 20px;
+    display: inline-block;
+    border-right: solid 1px #eceef4;
+}
+
+.menu_block .search{
+    margin-left: 1347px;
+}
+
+.main_content_block {
+    position: relative;
+    background-image: url("img/iback@1X.png");
+    height: 885px;
+    width: 100%;
+}
+
+.main_content_block h1 {
+    position: absolute;
+    top: 265px;
+    left: 617px;
+
+    font-family: ﻿OpenSans-Bold;
+    font-size: 42pt;
+    color: rgba(255, 255, 255, 255);
+    text-align: center;
+}
+
+.main_content_block h2 {
+    position: absolute;
+    top: 329px;
+    left: 724px;
+
+    font-family: ﻿OpenSans-Light;
+    font-size: 32pt;
+    color: rgba(255, 255, 255, 255);
+    text-align: center;
+}
+
+/*SLIDER*/
+.slider_block {
+    top: 520px;
+    left: 825px;
+
+    position: absolute;
+    height: 241px;
+
+    display: flex;
+}
+
+.slider_item {
+    width: 322px;
+}
+
+.slider_item .design {
+    height: 100%;
+    width: 100%;
+    background-image: url("img/design@1X.png");
+}
+
+.slider_item .iphone {
+    height: 100%;
+    width: 100%;
+    background-image: url("img/iphone.png");
+}
+
+.likeBlock {
+    margin-top: 176px;
+
+    font-family: ﻿OpenSans-Semibold;
+    font-size: 14pt;
+    text-align: center;
+    height: 65px;
+}
+
+.yellowLike {
+    background-image: url("img/yellowLike.png");
+}
+
+.greenLike {
+    background-image: url("img/greenLike.png");
+}
+
+.slider_block > .nav {
+    height: 100%;
+    width: 111px;
+    background-image: url("img/Composed-layer@1X.png");
+}
+
+/*
+FOOT*/
+.foot_block {
+    margin-left: 420px;
+    margin-top: 30px;
+
+    padding-right: 31px;
+}
+
+.foot_block h2 {
+    font-family: ﻿OpenSans-Bold;
+    font-size: 26pt;
+    color: rgba(109, 110, 113, 255);
+    text-align: left;
+}
+
+.foot_block span {
+    font-family: ﻿OpenSans-Light;
+    font-size: 16pt;
+    color: rgba(109, 110, 113, 255);
+    text-align: justify;
+
+}
+
+.foot_block img {
+    height: 106px;
+    width: 113px;
+}

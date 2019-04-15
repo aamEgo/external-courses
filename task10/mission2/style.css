@@ -1,0 +1,24 @@
+/*
+head color #e3eaf3
+odd color #f2f6fa
+even color #e8edf4
+hover color #e2e5e9
+*/
+
+
+.custom_head th{
+    background-color: #e3eaf3;
+    height: 24px;
+}
+
+.custom_body tr:nth-child(odd){
+    background-color: #f2f6fa;
+}
+
+.custom_body tr:nth-child(even){
+    background-color: #e8edf4;
+}
+
+#main_table tr:hover {
+    background-color: #e2e5e9;
+}

@@ -1,0 +1,15 @@
+label {
+    display: block;
+    margin: 10px 0px 10px 0px;
+}
+
+.content {
+    width: 966px;
+    height: 834px;
+    font-family: Sans-Serif;
+}
+
+.self_info {
+    width: 320px;
+    height: 134px;
+}

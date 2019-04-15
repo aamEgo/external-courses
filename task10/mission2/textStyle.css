@@ -1,0 +1,25 @@
+/*
+head text color #758697
+body text color #606f80
+*/
+
+#main_table{
+    font-family: Sans-Serif;
+}
+
+.custom_head {
+    font-size: 11px;
+    text-transform: uppercase;
+    color: #758697;
+}
+
+.custom_body tr td{
+    padding: 14px;
+    color: #606f80;
+    font-size: 0.9em;
+}
+
+.custom_body tr :first-child{
+    text-transform: capitalize;
+}
+
