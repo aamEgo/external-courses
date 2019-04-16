@@ -20,10 +20,29 @@ div {
     padding: 1px;
 }
 
-.variation_4 .text{
+.variation_4 .text {
     background: white;
 }
 
-.variation_5{
-    border: 1px double;
+.variation_5 {
+    position: relative;
+}
+
+.variation_5::after {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    border: 1px solid yellow;
+}
+
+.variation_6 {
+    border-image-slice: 27 27 27 27;
+    border-image-width: 20px 20px 20px 20px;
+    border-image-outset: 0px 0px 0px 0px;
+    border-image-repeat: stretch stretch;
+    border-image-source: url("https://mdn.mozillademos.org/files/6007/border-image-1.png");
 }
