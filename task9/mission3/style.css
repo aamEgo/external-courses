@@ -1,14 +1,33 @@
-.stars_button{
+.shadow_button {
+    display: inline-block;
+    padding: 4px;
+    background-color: #cbcbcb;
+    border-radius: 12px;
+    box-shadow: 0 0 0 2px white, 0 0 0 4px #6f6f6f;
+}
 
+.stars_button {
+    min-width: 160px;
+    height: 40px;
+    font-size: 15px;
+    border: 0.8px solid rgb(161, 161, 161);
+    outline: none;
+    background: linear-gradient(to top, rgb(188, 188, 188), rgb(227, 227, 227));
+    border-radius: 9px;
 }
 
 .stars_button span {
+    color: rgb(91, 91, 91);
     font: 1.2em sans-serif;
-    text-shadow: 0 0 2px #505050;
+    text-shadow: 0 0 1px #505050;
     text-transform: uppercase;
+    font-weight: bold;
 }
 
-.stars_button span:after,.stars_button span:before {
+.stars_button span:after, .stars_button span:before {
+    margin-left: 2px;
+    margin-right: 2px;
+    color: rgb(136, 136, 136);
     content: '★';
     text-shadow: initial;
 }

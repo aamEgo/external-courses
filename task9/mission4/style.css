@@ -4,26 +4,57 @@ color2:#90cdaf
 color3:#bfe3d1
  */
 
-.variation1 {
+.content{
+}
 
+.variation1_wrap{
+    position: relative;
+    height: 248px;
+}
+
+.variation1 {
+    position: absolute;
+    width: 248px;
+    height: 200px;
+    background: #bfe3d1;
+    top: 10px;
+    left: 10px;
 }
 
 .variation1-1 {
-
+    position: absolute;
+    width: 248px;
+    height: 200px;
+    top: -5px;
+    left: -5px;
+    background: #90cdaf;
 }
 
 .variation1-1-1 {
-
+    position: absolute;
+    width: 248px;
+    height: 200px;
+    background: #60b88d;
+    top: -5px;
+    left: -5px;
 }
 
 .variation2 {
-    width: 20%;
+    background: #60B88D;
+    width: 248px;
+    height: 200px;
+    box-shadow: 5px 5px 0 #90CDAF, 10px 10px 0 #BFE3D1;
+    margin-bottom: 40px;
+}
+
+.variation3 {
+    width: 248px;
     background: #60B88D;
     height: 200px;
     position: relative;
 }
 
-.variation2::after, .variation2::before {
+.variation3::after, .variation3::before {
     content: "";
     position: absolute;
     height: 100%;
@@ -31,18 +62,14 @@ color3:#bfe3d1
     z-index: -1;
 }
 
-.variation2::before {
+.variation3::before {
     top: 10px;
     left: 10px;
     background: #bfe3d1;
 }
 
-.variation2::after {
+.variation3::after {
     top: 5px;
     left: 5px;
     background: #90cdaf;
-}
-
-.variation3 {
-
 }
