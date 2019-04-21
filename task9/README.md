@@ -46,6 +46,6 @@
 
 Решение:
 
-Используя Flex - https://codepen.io/anon/pen/MRvWKV
+Используя Flex - https://codepen.io/aamego/pen/axKrrX
 
-Используя Grid - https://codepen.io/anon/pen/KYvKLG
+Используя Grid - https://codepen.io/aamego/pen/axKrQP
