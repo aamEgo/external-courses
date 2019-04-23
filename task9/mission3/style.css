@@ -1,3 +1,8 @@
+/*
+#dedede - #d2d2d2
+#c4c4c4 - #afafafc9
+*/
+
 .shadow_button {
     display: inline-block;
     padding: 4px;
@@ -7,16 +12,20 @@
 }
 
 .stars_button {
+    position: relative;
+
     min-width: 185px;
     height: 40px;
     font-size: 15px;
     border: 0.8px solid rgb(161, 161, 161);
     outline: none;
-/*    background: linear-gradient(to bottom, #dcdcdc, #aaaaaa);*/
-    background: linear-gradient(to top,rgb(153, 153, 153), rgb(227, 227, 227));
+    background-image: -moz-linear-gradient(#dedede, #d2d2d2 50%, #c4c4c4 20%, #afafafc9);
+    background-image: -webkit-linear-gradient(#dedede, #d2d2d2 50%, #c4c4c4 20%, #afafafc9);
+    background-image: -o-linear-gradient(#dedede, #d2d2d2 50%, #c4c4c4 20%, #afafafc9);
     border-radius: 9px;
     box-shadow: 2px 2px 7px 0px #00000091;
 }
+
 
 .stars_button span {
     position: relative;
