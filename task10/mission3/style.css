@@ -1,6 +1,5 @@
 @import url('https://fonts.googleapis.com/css?family=Open+Sans');
 
-
 html{
     font-family: 'Open Sans', sans-serif;
     color: rgba(109, 110, 113, 255);
@@ -9,6 +8,14 @@ html{
 ul{
     margin: 0;
 }
+
+.tablet-menu{
+    display: none;
+    width: 70px;
+    height: 70px;
+    background: url("img/tablet-menu.png") no-repeat;
+}
+
 
 .content {
 
@@ -22,9 +29,14 @@ ul{
 /*--------------------------------TOP-----------------------------------------*/
 
 .head{
+    height: 217px;
     display: flex;
-    margin-top: 61px;
     justify-content: space-between;
+    align-items: center;
+}
+
+.header_spacer{
+
 }
 
 .logo {
@@ -36,7 +48,7 @@ ul{
 /*--------------------------------NAV-----------------------------------------*/
 
 .nav_icons {
-    margin-top: 33px;
+    margin-top: 44px;
     width: 227px;
     display: flex;
     justify-content: space-between;
@@ -107,9 +119,8 @@ ul{
 
 .menu_line {
     height: 85px;
-    margin-top: 63px;
-    border-top: 1px solid #bcbec3;;
-    border-bottom: 1px solid #bcbec3;;
+    border-top: 1px solid #eceef4;;
+    border-bottom: 1px solid #eceef4;
 }
 
 .horizontal_menu{
@@ -126,7 +137,7 @@ ul{
     font-weight: bold;
     font-size: 13px;
 
-    border-right: 1px solid #bcbec3;
+    border-right: 1px solid #eceef4;
     display: inline-block;
     color: rgba(109, 110, 113, 255);
 }
@@ -161,6 +172,7 @@ ul{
 }
 
 .find_block input{
+    font-size: 15px;
     margin-left: 13px;
     border: none;
 }
@@ -286,6 +298,10 @@ ul{
 
 .foot_info_container{
     display: flex;
+}
+
+.foot_info_container img{
+    width: 106px;
 }
 
 .foot_text_container{
