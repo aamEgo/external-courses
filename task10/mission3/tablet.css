@@ -44,13 +44,26 @@
         display: none;
     }
 
+    .slider_content {
+        height: 761px;
+    }
+
     .foot_info_wrapper {
-        width: 70%;
+        width: 75%;
         flex-flow: column;
         align-items: center;
     }
 
+    .foot_title {
+        margin-top: initial;
+    }
+
+    .foot_info_container{
+        margin-top: 34px;
+    }
+
     .foot_text_container{
+        width: initial;
         min-width: 386px;
     }
 }
