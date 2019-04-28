@@ -1,0 +1,25 @@
+.floatingInput {
+    display: flex;
+    flex-flow: column-reverse;
+    width: fit-content;
+}
+
+.floatingInput > input {
+    outline: 0;
+}
+
+.floatingInput > label {
+    font-size: 12px;
+    color: #2c8ffe;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+}
+
+.floatingInput > input:invalid + label {
+    opacity: 0;
+}
+
+.floatingInput > input:valid + label {
+    opacity: 1;
+}
+
