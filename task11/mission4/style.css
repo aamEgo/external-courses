@@ -1,0 +1,103 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.side-bar {
+    width: 200px;
+    height: 900px;
+    background: #19202e;
+}
+
+.side-bar-block {
+    background: #1f2637;
+    width: 100%;
+    border-top: 1px solid #282f41;
+    border-bottom: 1px solid #161b28;
+    margin-bottom: 4px;
+    box-sizing: border-box;
+}
+
+.sbb-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 120px;
+}
+
+.sbb-button > button {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-around;;
+    align-items: center;
+
+    box-sizing: content-box;
+    width: 160px;
+    height: 44px;
+    font-size: 14px;
+    font-weight: bold;
+    color: white;
+    text-transform: uppercase;
+
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+    background: #f2795a;
+}
+
+.sbb-button .plus {
+    margin-right: -16px;
+    font-size: 18px;
+}
+
+.sbb-list {
+    font-size: 13px;
+    color: rgba(120, 130, 157, 255);
+}
+
+.sbb-list:last-child{
+    margin-bottom: 10px;
+}
+
+.sbb-list > li {
+    padding: 12px 20px;
+}
+
+.sbb-list > li > i {
+    margin-right: 12px;
+}
+
+.sbb-list > li:hover {
+    background-color: #15a4fa;
+    color: white;
+    cursor: pointer;
+}
+
+.sbb-list .fa-circle {
+    position: relative;
+    top: -1px;
+    font-size: 7px;
+}
+.categories-block{
+    margin-top:15px;
+}
+
+.redball {
+    color: #e64c66;
+}
+
+.orangeball {
+    color: #ffab00;
+}
+
+.blueball {
+    color: #00bfdd;
+}
+
+.purpleball {
+    color: #7874cf;
+}
+
+.side-bar-block:last-child {
+    height: inherit;
+}

@@ -1,65 +1,130 @@
-.hexagon {
-    width: 100px;
-    height: 55px;
-    background: #fc5e5e;
-    position: relative;
-    margin: 10px auto;
-}
-.hexagon:before {
-    content: "";
-    width: 0;
-    height: 0;
-    position: absolute;
-    top: -25px;
-    left: 0;
-    border-left: 50px solid transparent;
-    border-right: 50px solid transparent;
-    border-bottom: 25px solid #fc5e5e;
-}
-.hexagon:after {
-    content: "";
-    width: 0;
-    height: 0;
-    position: absolute;
-    bottom: -25px;
-    left: 0;
-    border-left: 50px solid transparent;
-    border-right: 50px solid transparent;
-    border-top: 25px solid #fc5e5e;
+:root {
+    --preload-min: 150px;
+    --preload-max: 200px;
 }
 
-:root{
-    --anim-duration-var: 2s;
+* {
+    margin: 0px;
+    padding: 0px;
 }
 
-*{
-    margin: 0;
-    padding: 0;
-}
-
-.content{
-    width: 100%;
-    height: 100%;
-}
-
-.page_loader_flex{
+.page_loader_frame {
     display: flex;
     justify-content: center;
+    align-content: center;
+    position: fixed;
     align-items: center;
     width: 100%;
     height: 100%;
-    background-color: #6f6f6f;
-    z-index: 1000;
-    transition: z-index var(--anim-duration-var);
+    background: radial-gradient(white, #bf72d6);
+    animation: hide-preloader 4s linear;
+    opacity: 0;
 }
 
+.page_loader_container {
+    width: 200px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
 
-@keyframes loader-spin {
-    from{
-        transform: rotate(0deg);
+.page_loader_bar {
+    background: #6f6f6f;
+    height: 150px;
+    width: 50px;
+    animation: jump-bar 0.8s linear infinite;
+}
+
+.page_loader_bar:nth-child(1) {
+    animation-delay: .4s;
+}
+
+.page_loader_bar:nth-child(2) {
+    animation-delay: .8s;
+}
+
+.page_loader_bar:nth-child(3) {
+    animation-delay: 1.2s;
+}
+
+@keyframes jump-bar {
+    0% {
+        height: var(--preload-min);
     }
-    to{
-        transform: rotate(360deg);
-        z-index: -1;
+    50% {
+        height: var(--preload-max);
+    }
+    100% {
+        height: var(--preload-min);
+    }
+}
+
+@keyframes hide-preloader {
+    from {
+        opacity: 0;
+    }
+    80% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+
+.football_box {
+    height: 200px;
+    width: 40%;
+    display: flex;
+    flex-flow: row nowrap;
+}
+
+.ball_container {
+    position: relative;
+    min-width: 300px;
+}
+
+.ball {
+    left: 0;
+    top: 0;
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    border: 0;
+    background: #f4efefd4;
+    box-shadow: inset -4px -4px 6px 9px darkred;
+
+    animation: move-on-field-x 1s linear 0s infinite alternate, move-on-field-y 1.2s linear 0s infinite alternate
+}
+
+.wall {
+    width: 80px;
+}
+
+.wall_texture {
+    background: url("img/wall.jpg") 50% 50%;
+    height: 100%;
+    width: 100%;
+}
+
+@keyframes move-on-field-x {
+    from {
+        left: 0;
+        /*transform: translateX(0%);*/
+    }
+    to {
+        left: calc(100% - 32px);
+        /* transform: translateX(100%);*/
+    }
+}
+
+@keyframes move-on-field-y {
+    from {
+        top: 0;
+        /*        transform: translateY(0%);*/
+    }
+    to {
+        top: calc(100% - 32px);
+        /*        transform: translateY(100%);*/
     }
 }
