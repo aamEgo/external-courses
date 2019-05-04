@@ -1,0 +1,38 @@
+/* RATING */
+
+.rating{
+    display: flex;
+    justify-content: start;
+}
+
+.stars-container{
+    color: #ffb211;
+    display: flex;
+    flex-flow: row-reverse nowrap;
+}
+
+.far.fa-star{
+    width: .56em;
+    overflow: hidden;
+}
+
+.far.fa-star:nth-child(odd){
+    direction: rtl;
+}
+
+
+.far.fa-star:hover,
+.far.fa-star:hover~.far.fa-star,
+.stars-container:not(:hover) .far.fa-star[activ],
+.stars-container:not(:hover) .far.fa-star[activ]~.far.fa-star
+{
+    font-weight: 900;
+}
+
+.stars-container:not(:hover) .far.fa-star[activ],
+.stars-container:not(:hover) .far.fa-star
+{
+    color: #ffd507;
+}
+
+/* END RATING */

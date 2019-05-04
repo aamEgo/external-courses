@@ -1,0 +1,28 @@
+
+.button-border{
+    border: 1px solid #6f6f6f;
+}
+.authMenu{
+    padding: 20px;
+    display: inline-block;
+}
+
+.drop-down-list{
+    display: none;
+    border: 2px solid #90CDAF;
+}
+.drop-down-list ul{
+    display: grid;
+    margin: 0;
+    padding: 10px 10px;
+    list-style: none;
+}
+
+.drop-down-list ul li{
+    display: contents;
+}
+
+.drop-down-list-open{
+    display: inline-block;
+}
+
