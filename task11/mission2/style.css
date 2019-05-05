@@ -128,3 +128,38 @@
         /*        transform: translateY(100%);*/
     }
 }
+
+.anim_figure {
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    animation: anim_figure_frames 10s linear 0s;
+}
+
+@keyframes anim_figure_frames {
+    0% {
+        background: linear-gradient(#e66465, #9198e5,#6f6f6f,#00bfdd,#404a5e);
+        border-radius: 50%;
+    }
+    13% {
+        background: linear-gradient(#e66465, #9198e5,#6f6f6f,#00bfdd,#404a5e);
+        border-radius: 0;
+    }
+    26% {
+        background-position: 0 300px;
+    }
+    39%{
+        width: 400px;
+        transform: rotate(0deg);
+        transform: skew(15deg,15deg);
+    }
+    52%{
+        transform: rotate(-90deg);
+    }
+    67%{
+
+    }
+    80%{
+
+    }
+}
