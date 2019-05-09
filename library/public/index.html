@@ -8,7 +8,20 @@
     <link rel="stylesheet" href="css/style.css"/>
 </head>
 <body>
-<header></header>
+<header>
+    <ul class="blue-menu header_menu">
+        <li>Help Center</li>
+        <li>Our Support</li>
+        <li class="header_menu__guest" hidden>Sign In</li>
+        <li class="header_menu__authorized">
+            <div class="header_menu__user-info">
+                <div class="avatar"><img src="img/avatar-01@1X.png"/></div>
+                <div><span class="header_menu__user-nickname">John Doe</span></div>
+                <div><i class="fas fa-check-circle"></i></div>
+            </div>
+        </li>
+    </ul>
+</header>
 <div class="content">
     <div class="side-bar">
         <div class="side-bar-block sbb-button">
@@ -32,24 +45,76 @@
                 <li><i class="fas fa-circle purpleball"></i>Non Fiction</li>
             </ul>
         </div>
-        <div class="side-bar-block">
+        <div class="side-bar-block scroll">
             <ul class="sbb-list prev-active">
-                <li>
-                    <i class="far fa-clock"></i>
-                    <span>You added <span class="prev-active__book">Figh Club</span> by <span class="prev-active__book-author">Chuck Palahniuk</span> to your <span class="prev-active__category">Must Read Titles</span>
+                <div>
+                    <li>
+                        <i class="far fa-clock"></i>
+                        <span>You added <span class="prev-active__book">Figh Club</span> by <span
+                                class="prev-active__book-author">Chuck Palahniuk</span> to your <span
+                                class="prev-active__category">Must Read Titles</span>
                         <p class="prev-active__time">24 minutes ago</p>
                     </span>
-                </li>
-                <li>
-                    <i class="far fa-clock"></i>
-                    <span>You added <span class="prev-active__book">The Trial</span> by <span class="prev-active__book-author">Franz Kafka</span> to your <span class="prev-active__category">Must Read Titles</span>
+                    </li>
+                    <li>
+                        <i class="far fa-clock"></i>
+                        <span>You added <span class="prev-active__book">The Trial</span> by <span
+                                class="prev-active__book-author">Franz Kafka</span> to your <span
+                                class="prev-active__category">Must Read Titles</span>
                         <p class="prev-active__time">48 minutes ago</p>
                     </span>
-                </li>
+                    </li>
+                    <li>
+                        <i class="far fa-clock"></i>
+                        <span>You added <span class="prev-active__book">The Trial</span> by <span
+                                class="prev-active__book-author">Franz Kafka</span> to your <span
+                                class="prev-active__category">Must Read Titles</span>
+                        <p class="prev-active__time">48 minutes ago</p>
+                    </span>
+                    </li>
+                    <li>
+                        <i class="far fa-clock"></i>
+                        <span>You added <span class="prev-active__book">The Trial</span> by <span
+                                class="prev-active__book-author">Franz Kafka</span> to your <span
+                                class="prev-active__category">Must Read Titles</span>
+                        <p class="prev-active__time">48 minutes ago</p>
+                    </span>
+                    </li>
+                    <li>
+                        <i class="far fa-clock"></i>
+                        <span>You added <span class="prev-active__book">The Trial</span> by <span
+                                class="prev-active__book-author">Franz Kafka</span> to your <span
+                                class="prev-active__category">Must Read Titles</span>
+                        <p class="prev-active__time">48 minutes ago</p>
+                    </span>
+                    </li>
+                </div>
             </ul>
         </div>
     </div>
+    <div class="main-content-block">
+        <div class="header-category-line">
+            <h1>Browse Available Books</h1>
+        </div>
+        <div class="filter-books-block">
+            <ul class="filter-books-block__list">
+                <li>All Books</li>
+                <li>Most Recent</li>
+                <li>Most Popular</li>
+                <li>Free Books</li>
+            </ul>
+            <div class="filter-books-block__filter">
+                <input type="text" placeholder="Enter Keywords">
+                <i class="fa fa-search" aria-hidden="true"></i>
+            </div>
+        </div>
+    </div>
 </div>
-<footer></footer>
+<footer>
+    <ul class="blue-menu footer_menu">
+        <li><i class="fas fa-question-circle"></i></li>
+        <li><i class="fas fa-cog"></i></li>
+    </ul>
+</footer>
 </body>
 </html>
