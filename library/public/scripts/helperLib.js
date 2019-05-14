@@ -1,3 +1,0 @@
-function ajaxGet(url,cb) {
-    
-}

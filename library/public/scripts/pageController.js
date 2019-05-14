@@ -1,29 +1,6 @@
 window.onload = () => {
     window.client = new Client(null, null, null, null, allBooks);
 
-    function updateRatingElement(ratingElement, newRating) {
-        ratingElement.setAttribute('data-rating', newRating);
-        ratingElement.querySelector('[data-index]=' + newRating * 2).setAttribute('activ');
-    }
-
-    function createRatingElement() {
-        var result = document.createElement('div');
-        result.classList.add('rating');
-        var starsContainer = document.createElement('div');
-        starsContainer.classList.add('stars-container');
-        for (var i = 10; i > 0; --i) {
-            var star = document.createElement('i');
-            star.setAttribute('data-index', i);
-            star.classList.add('far', 'fa-star');
-            starsContainer.appendChild(star);
-        }
-        /*        starsContainer.addEventListener('click',function (e) {
-                    console.info(e.target.dataset);
-                });*/
-        result.appendChild(starsContainer);
-        return result;
-    }
-
     function createBookElement(book) {
         var result = document.createElement('div');
         result.classList.add('main-content-block__display_books__item');
@@ -44,9 +21,12 @@ window.onload = () => {
         bookAuthor.innerText = 'by ' + book.author;
 
 
+        /* RATING */
         var ratingElement = document.createElement('div');
         ratingElement.classList.add('book_rating');
-        ratingElement.appendChild(createRatingElement());
+        ratingElement.appendChild(createStarsComponent(book.rating, (newRating) => {
+            window.onRatingChanged(book.id, newRating);
+        }));
         result.appendChild(bookImage);
         result.appendChild(bookTitle);
         result.appendChild(bookAuthor);
@@ -81,7 +61,6 @@ window.onload = () => {
         e.target.setAttribute('active', null);
     });
 
-
     searchInput.addEventListener('keyup', function (e) {
         client.search_string = e.target.value;
         updateContent();
@@ -93,4 +72,8 @@ window.onload = () => {
         this.querySelector('[active]').removeAttribute('active');
         e.target.setAttribute('active', null);
     });
+
+    window.onRatingChanged = (bookId, newRating) => {
+        console.info(bookId + ' new Rating ' + newRating);
+    };
 };
