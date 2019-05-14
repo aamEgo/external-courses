@@ -6,6 +6,11 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
           integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
     <link rel="stylesheet" href="css/style.css"/>
+
+    <script src="scripts/bookLib.js"></script>
+    <script src="scripts/models.js"></script>
+    <script src="scripts/client.js"></script>
+    <script src="scripts/pageController.js"></script>
 </head>
 <body>
 <header>
@@ -39,10 +44,10 @@
         </div>
         <div class="side-bar-block">
             <ul class="sbb-list categories-block">
-                <li><i class="fas fa-circle redball"></i>Must Read Titles</li>
-                <li><i class="fas fa-circle orangeball"></i>Best Of List</li>
-                <li><i class="fas fa-circle blueball"></i>Classic Novels</li>
-                <li><i class="fas fa-circle purpleball"></i>Non Fiction</li>
+                <li data-category="must_read"><i class="fas fa-circle redball"></i>Must Read Titles</li>
+                <li data-category="best"><i class="fas fa-circle orangeball"></i>Best Of List</li>
+                <li data-category="classic"><i class="fas fa-circle blueball"></i>Classic Novels</li>
+                <li data-category="non_fiction"><i class="fas fa-circle purpleball"></i>Non Fiction</li>
             </ul>
         </div>
         <div class="side-bar-block scroll">
@@ -98,10 +103,10 @@
         </div>
         <div class="filter-books-block">
             <ul class="filter-books-block__list">
-                <li data-filter-books="all_books">All Books</li>
-                <li data-filter-books="recent_books">Most Recent</li>
-                <li data-filter-books="popular_books">Most Popular</li>
-                <li data-filter-books="free_books">Free Books</li>
+                <li active data-sort-books="all_books">All Books</li>
+                <li data-sort-books="recent_books">Most Recent</li>
+                <li data-sort-books="popular_books">Most Popular</li>
+                <li data-sort-books="free_books">Free Books</li>
             </ul>
             <div class="filter-books-block__filter">
                 <input type="text" placeholder="Enter Keywords">

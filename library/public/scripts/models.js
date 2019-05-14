@@ -21,7 +21,7 @@ class Book {
     }
 
     get author() {
-        return this._author;
+        return `${this._author.firstName} ${this._author.lastName}`;
     }
 
     get rating() {
@@ -48,4 +48,40 @@ class Book {
         return this._image_url;
     }
 
+
+    set id(value) {
+        this._id = value;
+    }
+
+    set title(value) {
+        this._title = value;
+    }
+
+    set author(value) {
+        this._author = value;
+    }
+
+    set rating(value) {
+        this._rating = value;
+    }
+
+    set cost(value) {
+        this._cost = value;
+    }
+
+    set categories(value) {
+        this._categories = value;
+    }
+
+    set createdAt(value) {
+        this._createdAt = value;
+    }
+
+    set updatedAt(value) {
+        this._updatedAt = value;
+    }
+
+    set image_url(value) {
+        this._image_url = value;
+    }
 }

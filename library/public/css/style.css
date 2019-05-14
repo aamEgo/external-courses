@@ -141,6 +141,8 @@ footer {
     cursor: pointer;
 }*/
 
+.buy-block li[active],
+.categories-block li[active],
 .buy-block li:hover,
 .categories-block li:hover {
     background-color: #15a4fa;
@@ -247,6 +249,7 @@ footer {
     padding: 5px 10px;
 }
 
+.filter-books-block__list > li[active],
 .filter-books-block__list > li:hover {
     background-color: #97b3ce;
     border-radius: 16px;
