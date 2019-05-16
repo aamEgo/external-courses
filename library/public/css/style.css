@@ -199,10 +199,15 @@ footer {
     font-size: 12px;
 }
 
+.prev-active .prev-active__light,
 .prev-active .prev-active__category,
 .prev-active .prev-active__book-author,
 .prev-active .prev-active__book {
     color: #677b92;
+}
+
+.prev-active__text {
+    word-break: break-all;
 }
 
 .prev-active__time {

@@ -2,7 +2,6 @@ class Client {
 
     constructor(user, sort_books, search_string, category_books, books) {
         this._user = user;
-        this._filter_books = sort_books;
         this._search_string = search_string;
         this._category_books = category_books;
         this._allBooks = [];
@@ -18,23 +17,23 @@ class Client {
         return this.acceptBooksSort(this.acceptBooksFilters());
     }
 
-    getBookById(id){
-        return this.allBooks.find(book=> id == book.id);
+    getBookById(id) {
+        return this.allBooks.find(book => id == book.id);
     }
 
     acceptBooksSort(booksToSort) {
         switch (this.sort_books) {
             case 'recent_books':
-                return booksToSort.sort((a, b) => {
-                    return a.updatedAt > b.updatedAt;
+                return booksToSort.sort((b, a) => {
+                    return a.createdAt - b.createdAt;
                 });
             case 'popular_books':
-                return booksToSort.sort((a, b) => {
-                    return a.rating > b.rating;
+                return booksToSort.sort((b, a) => {
+                    return a.rating - b.rating;
                 });
             case 'free_books':
                 return booksToSort.sort((a, b) => {
-                    return a.cost < b.cost;
+                    return a.cost - b.cost;
                 });
             default:
                 return booksToSort;
@@ -43,7 +42,7 @@ class Client {
 
     acceptBooksFilters() {
         return this.allBooks.filter(book => {
-            if (this.search_string && !book.title.toLowerCase().includes(this.search_string.toLowerCase()))
+            if (this.search_string && !(book.title.toLowerCase().includes(this.search_string.toLowerCase()) || book.author.toLowerCase().includes(this.search_string.toLowerCase())))
                 return false;
             if (this.category_books && !book.categories.includes(this.category_books))
                 return false;
