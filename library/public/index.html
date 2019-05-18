@@ -8,8 +8,6 @@
     <link rel="stylesheet" href="css/style.css"/>
 
 
-
-
     <script src="scripts/helperLib.js"></script>
     <script src="scripts/bookLib.js"></script>
 
@@ -24,12 +22,12 @@
 
     <script src="scripts/newStandart/main.js"></script>
 
-<!--    <script src="scripts/bookModel.js"></script>
-    <script src="scripts/clientModel.js"></script>
-    <script src="scripts/components/StarComponent.js"></script>
-    <script src="scripts/components/HistoryComponent.js"></script>
-    <script src="scripts/components/MainContentComponent.js"></script>
-    <script src="scripts/pageController.js"></script>-->
+    <!--    <script src="scripts/bookModel.js"></script>
+        <script src="scripts/clientModel.js"></script>
+        <script src="scripts/components/StarComponent.js"></script>
+        <script src="scripts/components/HistoryComponent.js"></script>
+        <script src="scripts/components/MainContentComponent.js"></script>
+        <script src="scripts/pageController.js"></script>-->
 </head>
 <body>
 <header>
@@ -79,20 +77,22 @@
         <div class="header-category-line">
             <h1>Browse Available Books</h1>
         </div>
-        <div class="filter-books-block">
-            <ul class="filter-books-block__list">
-                <li active data-sort-books="all_books">All Books</li>
-                <li data-sort-books="recent_books">Most Recent</li>
-                <li data-sort-books="popular_books">Most Popular</li>
-                <li data-sort-books="free_books">Free Books</li>
-            </ul>
-            <div class="filter-books-block__filter">
-                <input type="text" placeholder="Enter Keywords">
-                <i class="fa fa-search" aria-hidden="true"></i>
+        <div class="main-content-block__show-books">
+            <div class="filter-books-block">
+                <ul class="filter-books-block__list">
+                    <li active data-sort-books="all_books">All Books</li>
+                    <li data-sort-books="recent_books">Most Recent</li>
+                    <li data-sort-books="popular_books">Most Popular</li>
+                    <li data-sort-books="free_books">Free Books</li>
+                </ul>
+                <div class="filter-books-block__filter">
+                    <input type="text" placeholder="Enter Keywords">
+                    <i class="fa fa-search" aria-hidden="true"></i>
+                </div>
             </div>
-        </div>
-        <div class="main-content-block__display_books scroll">
+            <div class="main-content-block__display_books scroll">
 
+            </div>
         </div>
     </div>
 </div>

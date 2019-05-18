@@ -218,6 +218,11 @@ footer {
 
 .main-content-block {
     width: 100%;
+    height: 100%;
+}
+
+.main-content-block__show-books{
+    height: calc(100% - 71px);
 }
 
 .header-category-line, .filter-books-block {
@@ -291,7 +296,7 @@ footer {
     flex-flow: row wrap;
     color: rgba(68, 76, 99, 255);
     padding: 0 10px;
-    height: calc(100% - 70px - 50px);
+    height: calc(100% - 50px);
 }
 
 .main-content-block__display_books__item {
