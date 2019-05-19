@@ -34,8 +34,8 @@
     <ul class="blue-menu header_menu">
         <li>Help Center</li>
         <li>Our Support</li>
-        <li class="header_menu__guest" hidden>Sign In</li>
-        <li class="header_menu__authorized">
+        <li class="header_menu__guest">Sign In</li>
+        <li class="header_menu__authorized" hidden>
             <div class="header_menu__user-info">
                 <div class="avatar"><img src="img/avatar-01@1X.png"/></div>
                 <div><span class="header_menu__user-nickname">John Doe</span></div>
@@ -46,8 +46,8 @@
 </header>
 <div class="content">
     <div class="side-bar">
-        <div class="side-bar-block sbb-button">
-            <button><span class="plus">✚</span><span>add a book</span></button>
+        <div class="side-bar-block side-bar-block__button-container">
+            <button class="add-book-button"><span class="plus">✚</span><span>add a book</span></button>
         </div>
         <div class="side-bar-block">
             <ul class="sbb-list buy-block">
@@ -92,6 +92,43 @@
             </div>
             <div class="main-content-block__display_books scroll">
 
+            </div>
+        </div>
+        <div hidden class="main-content-block__create-book">
+            <div class="create-book-form-container">
+                <form class="create-book__form">
+                    <h2>Fill new book information</h2>
+                    <div class="floatingInput">
+                        <input name="title" pattern=".+" type="text" placeholder="Book Title" required>
+                        <label>Book Title</label>
+                    </div>
+                    <div class="floatingInput">
+                        <input name="author" pattern=".+" type="text" placeholder="First name Last name" required>
+                        <label>Author Name</label>
+                    </div>
+                    <div class="floatingInput">
+                        <input name="cost" min="0" pattern=".+" type="number" placeholder="Book cost" required>
+                        <label>Cost</label>
+                    </div>
+                    <div class="floatingInput">
+                        <input hidden>
+                        <label>Categories</label>
+                    </div>
+                    <select name="categories" multiple>
+                        <option value="must_read">Must Read Titles</option>
+                        <option value="best">Best Of List</option>
+                        <option value="classic">Classic Novels</option>
+                        <option value="non_fiction">Non Fiction</option>
+                    </select>
+                    <div class="floatingInput">
+                        <input name="image_url" pattern=".+" type="text" placeholder="Image url" required>
+                        <label>Image url</label>
+                    </div>
+                    <div>
+                        <button type="submit" class="add-book-button"><span class="plus">✚</span><span>add book</span>
+                        </button>
+                    </div>
+                </form>
             </div>
         </div>
     </div>

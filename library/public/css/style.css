@@ -82,7 +82,7 @@ footer {
     box-sizing: border-box;
 }
 
-.sbb-button {
+.side-bar-block__button-container {
     flex-shrink: 0;
 
     display: flex;
@@ -92,7 +92,7 @@ footer {
     color: #ffffff;
 }
 
-.sbb-button > button {
+.add-book-button {
     display: flex;
     flex-flow: row nowrap;
     justify-content: space-around;;
@@ -112,7 +112,7 @@ footer {
     background: #f2795a;
 }
 
-.sbb-button .plus {
+.add-book-button .plus {
     margin-right: -16px;
     font-size: 18px;
 }
@@ -221,7 +221,8 @@ footer {
     height: 100%;
 }
 
-.main-content-block__show-books{
+.main-content-block__create-book,
+.main-content-block__show-books {
     height: calc(100% - 71px);
 }
 
@@ -298,6 +299,53 @@ footer {
     padding: 0 10px;
     height: calc(100% - 50px);
 }
+
+.create-book-form-container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-items: center;
+    justify-content: center;
+}
+
+.create-book__form {
+    background-color: #eef1f7;
+    padding: 30px 20px;
+    border: 1px solid #dadfea;;
+    border-radius: 15px;
+    width: fit-content;
+
+    margin: 0 auto;
+    display: block;
+    width: fit-content;
+
+}
+
+.create-book__form > div {
+    width: 400px;
+    margin-bottom: 8px;
+}
+
+.create-book__form label,
+.create-book__form select {
+    text-align: center;
+    display: block;
+    width: 100%;
+}
+
+.create-book__form h2 {
+    text-transform: uppercase;
+    text-align: center;
+    margin: 22px;
+    font-size: 22px;
+    color: rgba(68, 76, 99, 255);
+}
+
+.create-book__form button{
+    margin: 0 auto;
+}
+
 
 .main-content-block__display_books__item {
     margin: 28px 10px 0 10px;

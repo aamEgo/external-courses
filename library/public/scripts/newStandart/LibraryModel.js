@@ -43,6 +43,10 @@ class LibraryModel extends EventEmitter {
         this._sort = value;
     }
 
+    getBookById(bookId) {
+        return this.booksLib.find(element => element.id == bookId);
+    }
+
     acceptFilters() {
         var newCollection = this.booksLib.filter(book => {
             if (this.search_string && !(book.title.toLowerCase().includes(this.search_string.toLowerCase()) || book.author.toLowerCase().includes(this.search_string.toLowerCase())))

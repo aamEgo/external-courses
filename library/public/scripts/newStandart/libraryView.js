@@ -15,9 +15,11 @@ class LibraryView extends EventEmitter {
             self.emit('sort_changed', sortValue);
         });
         //TODO debounce
-        elements.searchInput.addEventListener('keyup', (e) => {
-            var newSearchString = e.target.value;
-            this.emit('search_string_changed', newSearchString);
+        elements.searchInput.addEventListener('keydown', (e) => {
+            myDebounce(() => {
+                var newSearchString = e.target.value;
+                this.emit('search_string_changed', newSearchString);
+            }, 350);
         });
 
 
@@ -76,7 +78,7 @@ class LibraryView extends EventEmitter {
         var ratingElement = document.createElement('div');
         ratingElement.classList.add('book_rating');
         ratingElement.appendChild(createStarsComponent(book.rating, (newRating) => {
-            //window.onRatingChanged(book.id, newRating);
+            this.emit('book_rating_changed', book.id, newRating);
         }));
         result.appendChild(bookImage);
         result.appendChild(bookTitle);

@@ -1,34 +1,31 @@
-/*
-header, footer {
-    font-size: 13px;
-    color: #69738c;
+/* FLOATING INPUTS*/
+
+.floatingInput {
     display: flex;
-    justify-content: flex-end;
+    flex-flow: column-reverse;
+    width: fit-content;
 }
 
-.header_menu > li,
-.footer_menu > li {
-    display: inline-block;
-    padding: 15px 20px;
+.floatingInput > input {
+    outline: 0;
 }
 
-.header_menu > li:not(:last-child)::after {
-    position: relative;
-    left: 22px;
-    content: '•';
+.floatingInput > label {
     font-size: 16px;
-    color: #202737;
+    color: #2c8ffe;
+    opacity: 0;
+    transition: opacity 0.5s ease;
 }
 
-
-
-.footer_menu {
-    color: white;
+.floatingInput > input:invalid + label {
+    opacity: 0;
 }
 
-.footer_menu > li {
-    background-color: #1f2637;
-}*/
+.floatingInput > input:valid + label {
+    opacity: 1;
+}
+
+/* END FLOATING INPUTS */
 
 header, footer {
     font-size: 13px;
@@ -48,20 +45,20 @@ header, footer {
     display: block;
 }
 
-.blue-menu li:last-child{
+.blue-menu li:last-child {
     color: white;
     background-color: #15a4fa;
 }
 
-.blue-menu li:last-child:hover{
+.blue-menu li:last-child:hover {
     color: #69738c;
 }
 
-.blue-menu li:not(:last-child):hover{
+.blue-menu li:not(:last-child):hover {
     color: #15a4fa;
 }
 
-.header_menu > li{
+.header_menu > li {
     position: relative;
 }
 
@@ -74,18 +71,18 @@ header, footer {
     color: #202737;
 }
 
-.header_menu__user-info{
+.header_menu__user-info {
     position: relative;
-/*    position: relative;
-    top: -10px;
-    right: 6px;*/
+    /*    position: relative;
+        top: -10px;
+        right: 6px;*/
 
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
 
-.header_menu__user-info .avatar{
+.header_menu__user-info .avatar {
     position: absolute;
 
     width: 34px;
@@ -95,55 +92,51 @@ header, footer {
     border: 1px solid white;
 }
 
-.header_menu__user-nickname{
+.header_menu__user-nickname {
     margin-left: 45px;
     margin-right: 9px;
 }
 
-.footer_menu > li{
+.footer_menu > li {
     background-color: #1f2637;
     color: white;
 }
 
 /* STARS */
 
-
 /* RATING */
 
-.rating{
+.rating {
     display: flex;
     justify-content: start;
     font-size: 13px;
 }
 
-.stars-container{
+.stars-container {
     color: #ffb211;
     display: flex;
     flex-flow: row-reverse nowrap;
     cursor: pointer;
 }
 
-.far.fa-star{
+.far.fa-star {
     width: .56em;
     overflow: hidden;
 }
 
-.far.fa-star:nth-child(odd){
+.far.fa-star:nth-child(odd) {
     direction: rtl;
 }
 
-
 .far.fa-star:hover,
-.far.fa-star:hover~.far.fa-star,
+.far.fa-star:hover ~ .far.fa-star,
 .stars-container:not(:hover) .far.fa-star[activ],
-.stars-container:not(:hover) .far.fa-star[activ]~.far.fa-star
-{
+.stars-container:not(:hover) .far.fa-star[activ] ~ .far.fa-star {
     font-weight: 900;
 }
 
 .stars-container:not(:hover) .far.fa-star[activ],
-.stars-container:not(:hover) .far.fa-star
-{
+.stars-container:not(:hover) .far.fa-star {
     color: #ffd507;
 }
 

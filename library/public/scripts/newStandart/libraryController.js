@@ -20,6 +20,20 @@ class LibraryController {
 
             historyModel.addHistoryRow({event: 'changed_search_string', search_string: val});
         });
+
+        libraryView.on('book_rating_changed', (book_id, newRating) => {
+            var currentBook = libraryModel.getBookById(book_id);
+            currentBook.rating = newRating;
+            var eventData = {
+                event: 'changed_rating',
+                title: currentBook.title,
+                author: currentBook.author,
+                newRating: newRating
+            };
+            //Сортируем коллекцию в соответствии с новым рейтингом
+            libraryModel.acceptSort();
+            historyModel.addHistoryRow(eventData);
+        });
         this._libraryView = libraryView;
         this._libraryModel = libraryModel;
         this._historyView = historyView;
