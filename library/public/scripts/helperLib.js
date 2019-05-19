@@ -34,6 +34,11 @@ function myFetchGet(url, options) {
     });
 }
 
+function removeAttribute(element, attribute) {
+    if (element.getAttribute(attribute) != null)
+        element.removeAttribute(attribute);
+}
+
 function timeAgoFromTimestamp(timeFrom) {
     return timeDifference(new Date().getTime(), timeFrom);
 }
@@ -55,6 +60,26 @@ class EventEmitter {
 }
 
 //
+
+function formToJSON( elem ) {
+    let output = {};
+    new FormData( elem ).forEach(
+        ( value, key ) => {
+            // Check if property already exist
+            if ( Object.prototype.hasOwnProperty.call( output, key ) ) {
+                let current = output[ key ];
+                if ( !Array.isArray( current ) ) {
+                    // If it not an array, convert it to an array.
+                    current = output[ key ] = [ current ];
+                }
+                current.push( value ); // Add the new value to the array.
+            } else {
+                output[ key ] = value;
+            }
+        }
+    );
+    return output;
+}
 
 var forEach = function (array, callback, scope) {
     for (var i = 0; i < array.length; i++) {

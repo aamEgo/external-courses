@@ -2,6 +2,13 @@ class LibraryView extends EventEmitter {
     constructor(libraryModel, elements) {
         super();
         var self = this;
+        this.state = 'browse_books';
+        elements.showBookConstructorButton.addEventListener('click', () => this.setState('create_new_book'));
+        elements.addNewBookForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            var newBookObject = formToJSON(e.target);
+            this.emit('create_new_book', newBookObject);
+        });
         elements.categoriesBlock.addEventListener('click', (e) => {
             var newCategory = e.target.getAttribute('data-category');
             this.emit('category_changed', newCategory, e.target.innerText);
@@ -14,7 +21,6 @@ class LibraryView extends EventEmitter {
             e.target.setAttribute('active', '');
             self.emit('sort_changed', sortValue);
         });
-        //TODO debounce
         elements.searchInput.addEventListener('keydown', (e) => {
             myDebounce(() => {
                 var newSearchString = e.target.value;
@@ -40,6 +46,22 @@ class LibraryView extends EventEmitter {
         });
         this._libraryModel = libraryModel;
         this._elements = elements;
+    }
+
+    setState(newState) {
+        if (this.state == newState)
+            return;
+        for (var key in this.elements.switchLibraryViewBlocks) {
+            this.elements.switchLibraryViewBlocks[key].setAttribute('hidden', '');
+        }
+        switch (newState) {
+            case 'browse_books':
+                removeAttribute(this.elements.switchLibraryViewBlocks.browseBooksBlock, 'hidden');
+                break;
+            case 'create_new_book':
+                removeAttribute(this.elements.switchLibraryViewBlocks.createNewBookBlock, 'hidden');
+                break;
+        }
     }
 
     get libraryModel() {
