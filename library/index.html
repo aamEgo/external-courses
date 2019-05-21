@@ -8,27 +8,18 @@
     <link rel="stylesheet" href="css/style.css"/>
 
 
-    <script src="scripts/helperLib.js"></script>
-    <script src="scripts/bookLib.js"></script>
+    <script src="scripts/helpers/helperLib.js"></script>
+    <script src="scripts/helpers/starComponent.js"></script>
+    <script src="scripts/helpers/storage.js"></script>
 
+    <script src="scripts/libraryComponent/libraryModel.js"></script>
+    <script src="scripts/libraryComponent/libraryView.js"></script>
+    <script src="scripts/libraryComponent/libraryController.js"></script>
 
-    <script src="scripts/components/StarComponent.js"></script>
+    <script src="scripts/historyComponent/historyView.js"></script>
+    <script src="scripts/historyComponent/historyModel.js"></script>
 
-    <script src="scripts/newStandart/LibraryModel.js"></script>
-    <script src="scripts/newStandart/libraryView.js"></script>
-    <script src="scripts/newStandart/libraryController.js"></script>
-    <script src="scripts/newStandart/HistoryView.js"></script>
-    <script src="scripts/newStandart/HistoryModel.js"></script>
-
-    <script src="scripts/newStandart/storage.js"></script>
-    <script src="scripts/newStandart/main.js"></script>
-
-    <!--    <script src="scripts/bookModel.js"></script>
-        <script src="scripts/clientModel.js"></script>
-        <script src="scripts/components/StarComponent.js"></script>
-        <script src="scripts/components/HistoryComponent.js"></script>
-        <script src="scripts/components/MainContentComponent.js"></script>
-        <script src="scripts/pageController.js"></script>-->
+    <script src="scripts/main.js"></script>
 </head>
 <body>
 <header>
@@ -51,7 +42,7 @@
             <button id="show-book-constructor-button" class="add-book-button"><span class="plus">✚</span><span>add a book</span></button>
         </div>
         <div class="side-bar-block">
-            <ul class="sbb-list buy-block">
+            <ul class="side-bar-block-list buy-block">
                 <li><i class="fas fa-book-open"></i>Now Reading</li>
                 <li><i class="fas fa-globe-asia"></i>Browse</li>
                 <li><i class="fas fa-shopping-cart"></i>Buy Books</li>
@@ -61,7 +52,7 @@
             </ul>
         </div>
         <div class="side-bar-block">
-            <ul class="sbb-list categories-block">
+            <ul class="side-bar-block-list categories-block">
                 <li data-category="must_read"><i class="fas fa-circle redball"></i>Must Read Titles</li>
                 <li data-category="best"><i class="fas fa-circle orangeball"></i>Best Of List</li>
                 <li data-category="classic"><i class="fas fa-circle blueball"></i>Classic Novels</li>
@@ -69,7 +60,7 @@
             </ul>
         </div>
         <div class="side-bar-block scroll">
-            <ul class="sbb-list prev-active">
+            <ul class="side-bar-block-list prev-active">
                 <div id="historyComponent"></div>
             </ul>
         </div>

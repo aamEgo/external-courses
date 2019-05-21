@@ -1,8 +1,0 @@
-{
-  "name": "library",
-  "version": "0.0.1",
-  "main": "public/scripts",
-  "dependencies": {
-    "http-server": "^0.11.1"
-  }
-}

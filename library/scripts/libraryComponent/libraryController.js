@@ -55,9 +55,8 @@ class LibraryController {
 
             //Сохраняем обновленную информацию о коллекции книг
             storage.saveUpdatedBooks(libraryModel.booksLib);
-            //Применяем сортировку и фильтр для отображения этой книги
+            //Применяем фильтр для отображения этой книги
             libraryModel.acceptFilters();
-/*            setTimeout(()=>libraryModel.acceptSort(),0);*/
 
         });
 

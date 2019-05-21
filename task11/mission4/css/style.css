@@ -79,30 +79,30 @@ footer {
     font-size: 18px;
 }
 
-.sbb-list {
+.side-bar-block-list {
     font-size: 13px;
     color: rgba(120, 130, 157, 255);
 }
 
-.sbb-list:last-child {
+.side-bar-block-list:last-child {
     margin-bottom: 10px;
 }
 
-.sbb-list > li {
+.side-bar-block-list > li {
     padding: 12px 20px;
 }
 
-.sbb-list > li > i {
+.side-bar-block-list > li > i {
     margin-right: 12px;
 }
 
-.sbb-list > li:hover {
+.side-bar-block-list > li:hover {
     background-color: #15a4fa;
     color: white;
     cursor: pointer;
 }
 
-.sbb-list .fa-circle {
+.side-bar-block-list .fa-circle {
     position: relative;
     top: -1px;
     font-size: 7px;

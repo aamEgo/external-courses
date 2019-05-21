@@ -101,7 +101,7 @@ class LibraryView extends EventEmitter {
         /* RATING */
         var ratingElement = document.createElement('div');
         ratingElement.classList.add('book_rating');
-        ratingElement.appendChild(createStarsComponent(book.rating, (newRating) => {
+        ratingElement.appendChild(starComponent.createStarsComponent(book.rating, (newRating) => {
             this.emit('book_rating_changed', book.id, newRating);
         }));
         result.appendChild(bookImage);
