@@ -4,6 +4,8 @@ class LibraryModel extends EventEmitter {
         this._search_string = null;
         this._category = null;
         this._sort = 'all_books';
+        this.state = '';
+
 
         this._booksLib = booksLib.map(element => {
             if (element.author.firstName)
@@ -12,7 +14,7 @@ class LibraryModel extends EventEmitter {
         });
 
 
-        this.currentCollection = this._booksLib;
+        this.currentCollection = this._booksLib.slice();
     }
 
     get booksLib() {
@@ -43,6 +45,26 @@ class LibraryModel extends EventEmitter {
         this._sort = value;
     }
 
+
+    setState(newState) {
+        if (this.state != newState) {
+            this.state = newState;
+            this.emit('state_changed', newState);
+        }
+    }
+
+    addNewBook(newBook) {
+        var maxId = 0;
+        this.booksLib.forEach(element => {
+            if (element.id > maxId)
+                maxId = element.id;
+        });
+        var nextId = ++maxId;
+        newBook.id = nextId;
+        this.booksLib.push(newBook);
+        this.emit('added_new_book', newBook);
+    }
+
     getBookById(bookId) {
         return this.booksLib.find(element => element.id == bookId);
     }
@@ -66,7 +88,7 @@ class LibraryModel extends EventEmitter {
         switch (this.sort) {
             case 'recent_books':
                 sortedCollection = this.currentCollection.sort((b, a) => {
-                    return a.createdAt - b.createdAt;
+                    return a.updatedAt - b.updatedAt;
                 });
                 break;
             case 'popular_books':

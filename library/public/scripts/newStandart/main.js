@@ -1,20 +1,28 @@
 window.onload = () => {
     const HISTORY_MAX_ELEMENTS = 3;
 
+    //
+/*    storage.removeItem('allBooks');
+    storage.removeItem('history');*/
 
-    //TODO from localstore
 
-    myFetchGet('https://rsu-library-api.herokuapp.com/books')
-        .then((json) => {
-            json = JSON.parse(json);
-            initApplication(json, null);
-        })
-        .catch((msg) => {
-            console.error('Error: ', msg)
-        });
+    var fromStorage = storage.loadFromStorage();
+    if (fromStorage.allBooks) {
+        initApplication(fromStorage.allBooks,fromStorage.history);
+    } else {
+        myFetchGet('https://rsu-library-api.herokuapp.com/books')
+            .then((json) => {
+                json = JSON.parse(json);
+                initApplication(json, fromStorage.history);
+            })
+            .catch((msg) => {
+                console.error('Error: ', msg)
+            });
+    }
 
 
     function initApplication(books, history) {
+
         var libraryModel = new LibraryModel(books);
         var libraryView = new LibraryView(libraryModel, {
             showBookConstructorButton: document.querySelector('#show-book-constructor-button'),
@@ -25,6 +33,7 @@ window.onload = () => {
                 createNewBookBlock: document.querySelector('.main-content-block__create-book'),
             },
 
+            stateTitle: document.querySelector('.header-category-line > h1'),
             booksBlock: document.querySelector('.main-content-block__display_books'),
             categoriesBlock: document.querySelector('.categories-block'),
             sortMenu: document.querySelector('.filter-books-block__list'),

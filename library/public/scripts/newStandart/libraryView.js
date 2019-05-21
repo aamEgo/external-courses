@@ -2,12 +2,11 @@ class LibraryView extends EventEmitter {
     constructor(libraryModel, elements) {
         super();
         var self = this;
-        this.state = 'browse_books';
-        elements.showBookConstructorButton.addEventListener('click', () => this.setState('create_new_book'));
+        elements.showBookConstructorButton.addEventListener('click', () => libraryModel.setState('create_new_book'));
         elements.addNewBookForm.addEventListener('submit', (e) => {
             e.preventDefault();
             var newBookObject = formToJSON(e.target);
-            this.emit('create_new_book', newBookObject);
+            this.emit('create_new_book_command', newBookObject);
         });
         elements.categoriesBlock.addEventListener('click', (e) => {
             var newCategory = e.target.getAttribute('data-category');
@@ -24,11 +23,30 @@ class LibraryView extends EventEmitter {
         elements.searchInput.addEventListener('keydown', (e) => {
             myDebounce(() => {
                 var newSearchString = e.target.value;
-                this.emit('search_string_changed', newSearchString);
+                if (newSearchString.length >= 3 || newSearchString.length == 0)
+                    this.emit('search_string_changed', newSearchString);
             }, 350);
         });
 
 
+        libraryModel.on('state_changed', newState => {
+            for (var key in this.elements.switchLibraryViewBlocks) {
+                this.elements.switchLibraryViewBlocks[key].setAttribute('hidden', '');
+            }
+            switch (newState) {
+                case 'browse_books':
+                    this.elements.stateTitle.innerText = "Browse Available Books";
+                    removeAttribute(this.elements.switchLibraryViewBlocks.browseBooksBlock, 'hidden');
+                    break;
+                case 'create_new_book':
+                    this.elements.stateTitle.innerText = "Create New Book";
+                    removeAttribute(this.elements.switchLibraryViewBlocks.createNewBookBlock, 'hidden');
+                    break;
+                case 'error':
+                    this.elements.stateTitle.innerText = "There was a loading error";
+                    break;
+            }
+        });
         libraryModel.on('book_render', newBook => {
             this.getBooksContainer().appendChild(this.createBookElement(newBook));
         });
@@ -39,29 +57,13 @@ class LibraryView extends EventEmitter {
             var htmlElementsSorted = sortedCollection.map(element => {
                 return this.getBooksContainer().querySelector(`[data-book-id="${element.id}"]`);
             });
-            this.getBooksContainer().innerHTML = '';
+            //this.getBooksContainer().innerHTML = '';
             htmlElementsSorted.forEach(element => {
                 this.getBooksContainer().appendChild(element);
             });
         });
         this._libraryModel = libraryModel;
         this._elements = elements;
-    }
-
-    setState(newState) {
-        if (this.state == newState)
-            return;
-        for (var key in this.elements.switchLibraryViewBlocks) {
-            this.elements.switchLibraryViewBlocks[key].setAttribute('hidden', '');
-        }
-        switch (newState) {
-            case 'browse_books':
-                removeAttribute(this.elements.switchLibraryViewBlocks.browseBooksBlock, 'hidden');
-                break;
-            case 'create_new_book':
-                removeAttribute(this.elements.switchLibraryViewBlocks.createNewBookBlock, 'hidden');
-                break;
-        }
     }
 
     get libraryModel() {

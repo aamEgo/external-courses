@@ -55,10 +55,12 @@ class HistoryView extends EventEmitter {
     textFromEvent(obj) {
         var event = obj.event;
         switch (event) {
-            case 'user_added_book':
-                return `You added <span class="prev-active__light">${obj.title}</span> by <span
+            case 'added_book':
+                return `You added new book <span class="prev-active__light">${obj.title}</span> by <span
                                 class="prev-active__light">${obj.author}</span>`;
             case 'changed_search_string':
+                if (obj.search_string == '')
+                    return `You have cleared the search string`;
                 return `You searched <span class="prev-active__light">${obj.search_string}</span>`;
             case 'changed_rating':
                 return `You changed rating for a book <span class="prev-active__light">${obj.title}</span> by <span class="prev-active__light">${obj.author}</span> to <span class="prev-active__light">${obj.newRating}</span> stars`;

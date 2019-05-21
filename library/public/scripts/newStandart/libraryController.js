@@ -10,6 +10,7 @@ class LibraryController {
             libraryModel.acceptFilters();
             libraryModel.acceptSort();
 
+            libraryModel.setState('browse_books');
             historyModel.addHistoryRow({event: 'changed_category', category: categoryName});
         });
 
@@ -23,6 +24,7 @@ class LibraryController {
 
         libraryView.on('book_rating_changed', (book_id, newRating) => {
             var currentBook = libraryModel.getBookById(book_id);
+            currentBook.updatedAt = new Date().getTime();
             currentBook.rating = newRating;
             var eventData = {
                 event: 'changed_rating',
@@ -30,9 +32,37 @@ class LibraryController {
                 author: currentBook.author,
                 newRating: newRating
             };
+
+            //Сохраняем обновленную информацию о коллекции книг
+            storage.saveUpdatedBooks(libraryModel.booksLib);
             //Сортируем коллекцию в соответствии с новым рейтингом
             libraryModel.acceptSort();
             historyModel.addHistoryRow(eventData);
+        });
+
+        libraryView.on('create_new_book_command', newBookInfo =>{
+            var nowTime = new Date().getTime();
+            newBookInfo.rating = 1;
+            newBookInfo.createdAt = nowTime;
+            newBookInfo.updatedAt = nowTime;
+            libraryModel.addNewBook(newBookInfo);
+            libraryModel.setState('browse_books');
+        });
+
+        libraryModel.on('added_new_book',newBook=>{
+            var eventDataForHistory = { event: 'added_book', author: newBook.author, title: newBook.title};
+            historyModel.addHistoryRow(eventDataForHistory);
+
+            //Сохраняем обновленную информацию о коллекции книг
+            storage.saveUpdatedBooks(libraryModel.booksLib);
+            //Применяем сортировку и фильтр для отображения этой книги
+            libraryModel.acceptFilters();
+/*            setTimeout(()=>libraryModel.acceptSort(),0);*/
+
+        });
+
+        historyModel.on('add_element',()=>{
+            storage.saveHistory(historyModel.history);
         });
         this._libraryView = libraryView;
         this._libraryModel = libraryModel;
