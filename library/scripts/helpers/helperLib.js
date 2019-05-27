@@ -2,13 +2,13 @@ function prepend(container, newElement) {
     container.insertBefore(newElement, container.firstChild);
 }
 
-var myDebounce = function () {
+var myDebounce = (callback, delay) => {
     var lastTimer;
-    return (cb, delay) => {
+    return function () {
         clearTimeout(lastTimer);
-        lastTimer = setTimeout(cb, delay);
+        lastTimer = setTimeout(() => callback.apply(this, arguments), delay);
     }
-}();
+}
 
 function myFetchGet(url, options) {
     return new Promise(function (resolve, reject) {
@@ -43,7 +43,6 @@ function timeAgoFromTimestamp(timeFrom) {
     return timeDifference(new Date().getTime(), timeFrom);
 }
 
-
 class EventEmitter {
     constructor() {
         this._events = {};
@@ -59,22 +58,20 @@ class EventEmitter {
     }
 }
 
-//
-
-function formToJSON( elem ) {
+function formToJSON(elem) {
     let output = {};
-    new FormData( elem ).forEach(
-        ( value, key ) => {
+    new FormData(elem).forEach(
+        (value, key) => {
             // Check if property already exist
-            if ( Object.prototype.hasOwnProperty.call( output, key ) ) {
-                let current = output[ key ];
-                if ( !Array.isArray( current ) ) {
+            if (Object.prototype.hasOwnProperty.call(output, key)) {
+                let current = output[key];
+                if (!Array.isArray(current)) {
                     // If it not an array, convert it to an array.
-                    current = output[ key ] = [ current ];
+                    current = output[key] = [current];
                 }
-                current.push( value ); // Add the new value to the array.
+                current.push(value); // Add the new value to the array.
             } else {
-                output[ key ] = value;
+                output[key] = value;
             }
         }
     );
@@ -88,7 +85,6 @@ var forEach = function (array, callback, scope) {
 };
 
 function timeDifference(current, previous) {
-
     var msPerMinute = 60 * 1000;
     var msPerHour = msPerMinute * 60;
     var msPerDay = msPerHour * 24;
@@ -121,60 +117,3 @@ function timeDifference(current, previous) {
         return 'approximately ' + Math.round(elapsed / msPerYear) + ' years ago';
     }
 }
-
-var TimeAgo = (function () {
-    var self = {};
-
-    // Public Methods
-    self.locales = {
-        prefix: '',
-        sufix: 'ago',
-
-        seconds: 'less than a minute',
-        minute: 'about a minute',
-        minutes: '%d minutes',
-        hour: 'about an hour',
-        hours: 'about %d hours',
-        day: 'a day',
-        days: '%d days',
-        month: 'about a month',
-        months: '%d months',
-        year: 'about a year',
-        years: '%d years'
-    };
-
-    self.inWords = function (timeAgo) {
-        var seconds = Math.floor((new Date() - parseInt(timeAgo)) / 1000),
-            separator = this.locales.separator || ' ',
-            words = this.locales.prefix + separator,
-            interval = 0,
-            intervals = {
-                year: seconds / 31536000,
-                month: seconds / 2592000,
-                day: seconds / 86400,
-                hour: seconds / 3600,
-                minute: seconds / 60
-            };
-
-        var distance = this.locales.seconds;
-
-        for (var key in intervals) {
-            interval = Math.floor(intervals[key]);
-
-            if (interval > 1) {
-                distance = this.locales[key + 's'];
-                break;
-            } else if (interval === 1) {
-                distance = this.locales[key];
-                break;
-            }
-        }
-
-        distance = distance.replace(/%d/i, interval);
-        words += distance + separator + this.locales.sufix;
-
-        return words.trim();
-    };
-
-    return self;
-}());

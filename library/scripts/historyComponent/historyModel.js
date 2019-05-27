@@ -3,7 +3,6 @@ class HistoryModel extends EventEmitter {
         super();
         this.history = history ? history : [];
         this.MAX_ELEMENTS = MAX_ELEMENTS;
-        //this.emit('changed', this.historyComponent);
     }
 
     addHistoryRow(historyElement) {

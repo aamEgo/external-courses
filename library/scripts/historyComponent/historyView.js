@@ -36,7 +36,7 @@ class HistoryView extends EventEmitter {
     }
 
     deleteLastElement() {
-        this.historyElementHtml.removeChild(this.historyElementHtml.lastChild);
+        this.historyElementHtml.removeChild(this.historyElementHtml.lastElementChild);
     }
 
     createHistoryRow(historyObj) {

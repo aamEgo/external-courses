@@ -6,20 +6,6 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
           integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
     <link rel="stylesheet" href="css/style.css"/>
-
-
-    <script src="scripts/helpers/helperLib.js"></script>
-    <script src="scripts/helpers/starComponent.js"></script>
-    <script src="scripts/helpers/storage.js"></script>
-
-    <script src="scripts/libraryComponent/libraryModel.js"></script>
-    <script src="scripts/libraryComponent/libraryView.js"></script>
-    <script src="scripts/libraryComponent/libraryController.js"></script>
-
-    <script src="scripts/historyComponent/historyView.js"></script>
-    <script src="scripts/historyComponent/historyModel.js"></script>
-
-    <script src="scripts/main.js"></script>
 </head>
 <body>
 <header>
@@ -39,7 +25,8 @@
 <div class="content">
     <div class="side-bar">
         <div class="side-bar-block side-bar-block__button-container">
-            <button id="show-book-constructor-button" class="add-book-button"><span class="plus">✚</span><span>add a book</span></button>
+            <button id="show-book-constructor-button" class="add-book-button"><span class="plus">✚</span><span>add a book</span>
+            </button>
         </div>
         <div class="side-bar-block">
             <ul class="side-bar-block-list buy-block">
@@ -53,15 +40,14 @@
         </div>
         <div class="side-bar-block">
             <ul class="side-bar-block-list categories-block">
-                <li data-category="must_read"><i class="fas fa-circle redball"></i>Must Read Titles</li>
-                <li data-category="best"><i class="fas fa-circle orangeball"></i>Best Of List</li>
-                <li data-category="classic"><i class="fas fa-circle blueball"></i>Classic Novels</li>
-                <li data-category="non_fiction"><i class="fas fa-circle purpleball"></i>Non Fiction</li>
+                <li data-category="must_read"><i class="fas fa-circle red-ball"></i>Must Read Titles</li>
+                <li data-category="best"><i class="fas fa-circle orange-ball"></i>Best Of List</li>
+                <li data-category="classic"><i class="fas fa-circle blue-ball"></i>Classic Novels</li>
+                <li data-category="non_fiction"><i class="fas fa-circle purple-ball"></i>Non Fiction</li>
             </ul>
         </div>
         <div class="side-bar-block scroll">
-            <ul class="side-bar-block-list prev-active">
-                <div id="historyComponent"></div>
+            <ul id="historyComponent" class="side-bar-block-list prev-active">
             </ul>
         </div>
     </div>
@@ -69,7 +55,7 @@
         <div class="header-category-line">
             <h1>Browse Available Books</h1>
         </div>
-        <div class="main-content-block__show-books">
+        <div class="main-content-block__wrapper main-content-block__show-books">
             <div class="filter-books-block">
                 <ul class="filter-books-block__list">
                     <li active data-sort-books="all_books">All Books</li>
@@ -82,27 +68,25 @@
                     <i class="fa fa-search" aria-hidden="true"></i>
                 </div>
             </div>
-            <div class="main-content-block__display_books scroll">
-
-            </div>
+            <div class="main-content-block__display_books scroll"></div>
         </div>
-        <div hidden class="main-content-block__create-book">
+        <div hidden class="main-content-block__wrapper main-content-block__create-book">
             <div class="create-book-form-container">
                 <form class="create-book__form">
                     <h2>Fill new book information</h2>
-                    <div class="floatingInput">
+                    <div class="animate-label-hint">
                         <input name="title" pattern=".+" type="text" placeholder="Book Title" required>
                         <label>Book Title</label>
                     </div>
-                    <div class="floatingInput">
+                    <div class="animate-label-hint">
                         <input name="author" pattern=".+" type="text" placeholder="First name Last name" required>
                         <label>Author Name</label>
                     </div>
-                    <div class="floatingInput">
+                    <div class="animate-label-hint">
                         <input name="cost" min="0" pattern=".+" type="number" placeholder="Book cost" required>
                         <label>Cost</label>
                     </div>
-                    <div class="floatingInput">
+                    <div class="animate-label-hint">
                         <input hidden>
                         <label>Categories</label>
                     </div>
@@ -112,7 +96,7 @@
                         <option value="classic">Classic Novels</option>
                         <option value="non_fiction">Non Fiction</option>
                     </select>
-                    <div class="floatingInput">
+                    <div class="animate-label-hint">
                         <input name="image_url" pattern=".+" type="text" placeholder="Image url" required>
                         <label>Image url</label>
                     </div>
@@ -132,4 +116,16 @@
     </ul>
 </footer>
 </body>
+<script src="scripts/helpers/helperLib.js"></script>
+<script src="scripts/helpers/starComponent.js"></script>
+<script src="scripts/helpers/storage.js"></script>
+
+<script src="scripts/libraryComponent/libraryModel.js"></script>
+<script src="scripts/libraryComponent/libraryView.js"></script>
+<script src="scripts/libraryComponent/libraryController.js"></script>
+
+<script src="scripts/historyComponent/historyView.js"></script>
+<script src="scripts/historyComponent/historyModel.js"></script>
+
+<script src="scripts/main.js"></script>
 </html>

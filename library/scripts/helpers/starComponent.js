@@ -1,8 +1,9 @@
 var starComponent = function () {
     function updateRatingElement(ratingElement, newRating) {
         var prevActiveStar = ratingElement.querySelector('[activ]');
-        if (prevActiveStar)
+        if (prevActiveStar) {
             prevActiveStar.removeAttribute('activ');
+        }
         ratingElement.setAttribute('data-rating', newRating);
         ratingElement.querySelector('[data-index="' + newRating + '"]').setAttribute('activ', null);
     }
@@ -12,8 +13,9 @@ var starComponent = function () {
         starsContainer.classList.add('stars-container');
         for (var i = 10; i > 0; --i) {
             var star = document.createElement('i');
-            if (rating * 2 == i)
+            if (rating * 2 == i) {
                 star.setAttribute('activ', null);
+            }
             star.setAttribute('data-index', i);
             star.classList.add('far', 'fa-star');
             starsContainer.appendChild(star);

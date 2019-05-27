@@ -1,11 +1,6 @@
 window.onload = () => {
     const HISTORY_MAX_ELEMENTS = 3;
 
-    //
-/*    storage.removeItem('allBooks');
-    storage.removeItem('history');*/
-
-
     var fromStorage = storage.loadFromStorage();
     if (fromStorage.allBooks) {
         initApplication(fromStorage.allBooks,fromStorage.history);
@@ -20,9 +15,7 @@ window.onload = () => {
             });
     }
 
-
     function initApplication(books, history) {
-
         var libraryModel = new LibraryModel(books);
         var libraryView = new LibraryView(libraryModel, {
             showBookConstructorButton: document.querySelector('#show-book-constructor-button'),

@@ -1,5 +1,4 @@
 var storage = function () {
-
     function saveElementToStorage(elementName, elementData) {
         var dataSaveStringfy = JSON.stringify(elementData);
         localStorage.setItem(elementName, dataSaveStringfy);

@@ -1,31 +1,27 @@
-/* FLOATING INPUTS*/
-
-.floatingInput {
+.animate-label-hint {
     display: flex;
-    flex-flow: column-reverse;
+    flex-direction: column-reverse;
     width: fit-content;
 }
 
-.floatingInput > input {
+.animate-label-hint > input {
     outline: 0;
 }
 
-.floatingInput > label {
+.animate-label-hint > label {
     font-size: 16px;
     color: #2c8ffe;
     opacity: 0;
     transition: opacity 0.5s ease;
 }
 
-.floatingInput > input:invalid + label {
+.animate-label-hint > input:invalid + label {
     opacity: 0;
 }
 
-.floatingInput > input:valid + label {
+.animate-label-hint > input:valid + label {
     opacity: 1;
 }
-
-/* END FLOATING INPUTS */
 
 header, footer {
     font-size: 13px;
@@ -36,7 +32,7 @@ header, footer {
 
 .blue-menu {
     display: flex;
-    flex-flow: row;
+    flex-direction: row;
 }
 
 .blue-menu > li {
@@ -73,10 +69,6 @@ header, footer {
 
 .header_menu__user-info {
     position: relative;
-    /*    position: relative;
-        top: -10px;
-        right: 6px;*/
-
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -84,7 +76,6 @@ header, footer {
 
 .header_menu__user-info .avatar {
     position: absolute;
-
     width: 34px;
     height: 34px;
     border-radius: 50%;
@@ -101,10 +92,6 @@ header, footer {
     background-color: #1f2637;
     color: white;
 }
-
-/* STARS */
-
-/* RATING */
 
 .rating {
     display: flex;
@@ -139,5 +126,3 @@ header, footer {
 .stars-container:not(:hover) .far.fa-star {
     color: #ffd507;
 }
-
-/* END RATING */

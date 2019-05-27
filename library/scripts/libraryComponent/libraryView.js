@@ -20,14 +20,11 @@ class LibraryView extends EventEmitter {
             e.target.setAttribute('active', '');
             self.emit('sort_changed', sortValue);
         });
-        elements.searchInput.addEventListener('keydown', (e) => {
-            myDebounce(() => {
-                var newSearchString = e.target.value;
-                if (newSearchString.length >= 3 || newSearchString.length == 0)
-                    this.emit('search_string_changed', newSearchString);
-            }, 350);
-        });
-
+        elements.searchInput.addEventListener('keydown', myDebounce((e) => {
+            var newSearchString = e.target.value;
+            if (newSearchString.length >= 3 || newSearchString.length == 0)
+                this.emit('search_string_changed', newSearchString);
+        }, 350));
 
         libraryModel.on('state_changed', newState => {
             for (var key in this.elements.switchLibraryViewBlocks) {
@@ -57,7 +54,6 @@ class LibraryView extends EventEmitter {
             var htmlElementsSorted = sortedCollection.map(element => {
                 return this.getBooksContainer().querySelector(`[data-book-id="${element.id}"]`);
             });
-            //this.getBooksContainer().innerHTML = '';
             htmlElementsSorted.forEach(element => {
                 this.getBooksContainer().appendChild(element);
             });
@@ -82,7 +78,7 @@ class LibraryView extends EventEmitter {
         var result = document.createElement('div');
         result.classList.add('main-content-block__display_books__item');
         result.setAttribute('data-book-id', book.id);
-        //
+
         var bookImage = document.createElement('div');
         bookImage.classList.add('book_image');
         var image = document.createElement('img');
@@ -97,8 +93,6 @@ class LibraryView extends EventEmitter {
         bookAuthor.classList.add('book_author');
         bookAuthor.innerText = 'by ' + book.author;
 
-
-        /* RATING */
         var ratingElement = document.createElement('div');
         ratingElement.classList.add('book_rating');
         ratingElement.appendChild(starComponent.createStarsComponent(book.rating, (newRating) => {
@@ -110,7 +104,6 @@ class LibraryView extends EventEmitter {
         result.appendChild(ratingElement);
         return result;
     }
-
 
     show() {
         this.libraryModel.booksLib.forEach(element => {

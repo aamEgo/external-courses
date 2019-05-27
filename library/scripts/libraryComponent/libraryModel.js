@@ -6,13 +6,11 @@ class LibraryModel extends EventEmitter {
         this._sort = 'all_books';
         this.state = '';
 
-
         this._booksLib = booksLib.map(element => {
             if (element.author.firstName)
                 element.author = element.author.firstName + ' ' + element.author.lastName;
             return element;
         });
-
 
         this.currentCollection = this._booksLib.slice();
     }
