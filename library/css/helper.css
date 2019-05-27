@@ -1,0 +1,128 @@
+.animate-label-hint {
+    display: flex;
+    flex-direction: column-reverse;
+    width: fit-content;
+}
+
+.animate-label-hint > input {
+    outline: 0;
+}
+
+.animate-label-hint > label {
+    font-size: 16px;
+    color: #2c8ffe;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+}
+
+.animate-label-hint > input:invalid + label {
+    opacity: 0;
+}
+
+.animate-label-hint > input:valid + label {
+    opacity: 1;
+}
+
+header, footer {
+    font-size: 13px;
+    color: #69738c;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.blue-menu {
+    display: flex;
+    flex-direction: row;
+}
+
+.blue-menu > li {
+    cursor: pointer;
+    padding: 15px 20px;
+    display: block;
+}
+
+.blue-menu li:last-child {
+    color: white;
+    background-color: #15a4fa;
+}
+
+.blue-menu li:last-child:hover {
+    color: #69738c;
+}
+
+.blue-menu li:not(:last-child):hover {
+    color: #15a4fa;
+}
+
+.header_menu > li {
+    position: relative;
+}
+
+.header_menu > li:first-child::after {
+    position: absolute;
+    right: -3px;
+    top: 12px;
+    content: '•';
+    font-size: 16px;
+    color: #202737;
+}
+
+.header_menu__user-info {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header_menu__user-info .avatar {
+    position: absolute;
+    width: 34px;
+    height: 34px;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 1px solid white;
+}
+
+.header_menu__user-nickname {
+    margin-left: 45px;
+    margin-right: 9px;
+}
+
+.footer_menu > li {
+    background-color: #1f2637;
+    color: white;
+}
+
+.rating {
+    display: flex;
+    justify-content: start;
+    font-size: 13px;
+}
+
+.stars-container {
+    color: #ffb211;
+    display: flex;
+    flex-flow: row-reverse nowrap;
+    cursor: pointer;
+}
+
+.far.fa-star {
+    width: .56em;
+    overflow: hidden;
+}
+
+.far.fa-star:nth-child(odd) {
+    direction: rtl;
+}
+
+.far.fa-star:hover,
+.far.fa-star:hover ~ .far.fa-star,
+.stars-container:not(:hover) .far.fa-star[activ],
+.stars-container:not(:hover) .far.fa-star[activ] ~ .far.fa-star {
+    font-weight: 900;
+}
+
+.stars-container:not(:hover) .far.fa-star[activ],
+.stars-container:not(:hover) .far.fa-star {
+    color: #ffd507;
+}

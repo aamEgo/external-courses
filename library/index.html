@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>EPAM Task 11 mission 4</title>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+          integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/style.css"/>
+</head>
+<body>
+<header>
+    <ul class="blue-menu header_menu">
+        <li>Help Center</li>
+        <li>Our Support</li>
+        <li class="header_menu__guest">Sign In</li>
+        <li class="header_menu__authorized" hidden>
+            <div class="header_menu__user-info">
+                <div class="avatar"><img src="img/avatar-01@1X.png"/></div>
+                <div><span class="header_menu__user-nickname">John Doe</span></div>
+                <div><i class="fas fa-check-circle"></i></div>
+            </div>
+        </li>
+    </ul>
+</header>
+<div class="content">
+    <div class="side-bar">
+        <div class="side-bar-block side-bar-block__button-container">
+            <button id="show-book-constructor-button" class="add-book-button"><span class="plus">✚</span><span>add a book</span>
+            </button>
+        </div>
+        <div class="side-bar-block">
+            <ul class="side-bar-block-list buy-block">
+                <li><i class="fas fa-book-open"></i>Now Reading</li>
+                <li><i class="fas fa-globe-asia"></i>Browse</li>
+                <li><i class="fas fa-shopping-cart"></i>Buy Books</li>
+                <li><i class="fas fa-star"></i>Favourite Books</li>
+                <li><i class="fas fa-th-list"></i>Wishlist</li>
+                <li><i class="far fa-clock"></i>History</li>
+            </ul>
+        </div>
+        <div class="side-bar-block">
+            <ul class="side-bar-block-list categories-block">
+                <li data-category="must_read"><i class="fas fa-circle red-ball"></i>Must Read Titles</li>
+                <li data-category="best"><i class="fas fa-circle orange-ball"></i>Best Of List</li>
+                <li data-category="classic"><i class="fas fa-circle blue-ball"></i>Classic Novels</li>
+                <li data-category="non_fiction"><i class="fas fa-circle purple-ball"></i>Non Fiction</li>
+            </ul>
+        </div>
+        <div class="side-bar-block scroll">
+            <ul id="historyComponent" class="side-bar-block-list prev-active">
+            </ul>
+        </div>
+    </div>
+    <div class="main-content-block">
+        <div class="header-category-line">
+            <h1>Browse Available Books</h1>
+        </div>
+        <div class="main-content-block__wrapper main-content-block__show-books">
+            <div class="filter-books-block">
+                <ul class="filter-books-block__list">
+                    <li active data-sort-books="all_books">All Books</li>
+                    <li data-sort-books="recent_books">Most Recent</li>
+                    <li data-sort-books="popular_books">Most Popular</li>
+                    <li data-sort-books="free_books">Free Books</li>
+                </ul>
+                <div class="filter-books-block__filter">
+                    <input type="text" placeholder="Enter Keywords">
+                    <i class="fa fa-search" aria-hidden="true"></i>
+                </div>
+            </div>
+            <div class="main-content-block__display_books scroll"></div>
+        </div>
+        <div hidden class="main-content-block__wrapper main-content-block__create-book">
+            <div class="create-book-form-container">
+                <form class="create-book__form">
+                    <h2>Fill new book information</h2>
+                    <div class="animate-label-hint">
+                        <input name="title" pattern=".+" type="text" placeholder="Book Title" required>
+                        <label>Book Title</label>
+                    </div>
+                    <div class="animate-label-hint">
+                        <input name="author" pattern=".+" type="text" placeholder="First name Last name" required>
+                        <label>Author Name</label>
+                    </div>
+                    <div class="animate-label-hint">
+                        <input name="cost" min="0" pattern=".+" type="number" placeholder="Book cost" required>
+                        <label>Cost</label>
+                    </div>
+                    <div class="animate-label-hint">
+                        <input hidden>
+                        <label>Categories</label>
+                    </div>
+                    <select name="categories" multiple>
+                        <option value="must_read">Must Read Titles</option>
+                        <option value="best">Best Of List</option>
+                        <option value="classic">Classic Novels</option>
+                        <option value="non_fiction">Non Fiction</option>
+                    </select>
+                    <div class="animate-label-hint">
+                        <input name="image_url" pattern=".+" type="text" placeholder="Image url" required>
+                        <label>Image url</label>
+                    </div>
+                    <div>
+                        <button type="submit" class="add-book-button"><span class="plus">✚</span><span>add book</span>
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<footer>
+    <ul class="blue-menu footer_menu">
+        <li><i class="fas fa-question-circle"></i></li>
+        <li><i class="fas fa-cog"></i></li>
+    </ul>
+</footer>
+</body>
+<script src="scripts/helpers/helperLib.js"></script>
+<script src="scripts/helpers/starComponent.js"></script>
+<script src="scripts/helpers/storage.js"></script>
+
+<script src="scripts/libraryComponent/libraryModel.js"></script>
+<script src="scripts/libraryComponent/libraryView.js"></script>
+<script src="scripts/libraryComponent/libraryController.js"></script>
+
+<script src="scripts/historyComponent/historyView.js"></script>
+<script src="scripts/historyComponent/historyModel.js"></script>
+
+<script src="scripts/main.js"></script>
+</html>
