@@ -2,25 +2,25 @@ function Calculator() {
     var result = 0;
 
     function add(val) {
-        val = typeof val == 'number' ? val : 0;
+        val = typeof val === 'number' ? val : 0;
         result += val;
         return this;
     }
 
     function subtract(val) {
-        val = typeof val == 'number' ? val : 0;
+        val = typeof val === 'number' ? val : 0;
         result -= val;
         return this;
     }
 
     function divide(val) {
-        val = typeof val == 'number' ? val : 0;
+        val = typeof val === 'number' ? val : 0;
         result /= val;
         return this;
     }
 
     function multiply(val) {
-        val = typeof val == 'number' ? val : 0;
+        val = typeof val === 'number' ? val : 0;
         result *= val;
         return this;
     }
